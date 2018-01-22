@@ -98,7 +98,7 @@
 
 		}
 		#fade{
-			display: none;
+			opacity:0;
 		}
 		.card-content span{
 			letter-spacing: 0.1rem;
@@ -383,7 +383,9 @@
        $win.on("scroll" ,function(){
        		var top=$win.scrollTop();
        		if(top>=300){
-       			 $("#fade").fadeIn(3000);
+       			 $("#fade").fadeIn(4000,function(){
+       			  $(this).animate({"opacity":"1"},4000);
+       			 });
        		}
        });
        var pic=$("#sakarpic");
